@@ -12,10 +12,8 @@ window.addEventListener('load', function(){
     const right = document.getElementById('right');
     const rocket = document.querySelector('img');
     let paddingForRocket = {
-        up: 0,
-        down: 0,
-        left: 0,
-        right: 0
+        vertical: 0,
+        horizontal: 0
     };
 
     takeoff.addEventListener('click', function(){
@@ -45,27 +43,29 @@ window.addEventListener('load', function(){
 
         up.addEventListener('click', function(){
             rocket.style.position = 'relative';
-            pgtaddingForRocket.up -= 10;
-            rocket.style.top = paddingForRocket.up + 'px';
+            paddingForRocket.vertical -= 10;
+            rocket.style.top = paddingForRocket.vertical + 'px';
+            spaceShuttleHeight.innerHTML = parseInt(spaceShuttleHeight.innerHTML) + 10000;
         });
 
         down.addEventListener('click', function(){
             rocket.style.position = 'relative';
-            paddingForRocket.down += 10;
-            rocket.style.top = paddingForRocket.down + 'px';
+            paddingForRocket.vertical += 10;
+            rocket.style.top = paddingForRocket.vertical + 'px';
+            spaceShuttleHeight.innerHTML = parseInt(spaceShuttleHeight.innerHTML) - 10000;
             
         });
     
         left.addEventListener('click', function(){
             rocket.style.position = 'relative';
-            paddingForRocket.left -= 10;
-            rocket.style.left = paddingForRocket.left + 'px';
+            paddingForRocket.horizontal -= 10;
+            rocket.style.left = paddingForRocket.horizontal + 'px';
         });
     
         right.addEventListener('click', function(){
             rocket.style.position = 'relative';
-            paddingForRocket.right += 10;
-            rocket.style.left = paddingForRocket.right + 'px';
+            paddingForRocket.horizontal += 10;
+            rocket.style.left = paddingForRocket.horizontal + 'px';
         });
             
     });
